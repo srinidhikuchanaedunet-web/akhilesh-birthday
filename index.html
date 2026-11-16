@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AKHILESH.EXE | Birthday Surprise</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SCREEN 1: STARTUP -->
+  <section id="startup" class="screen startup">
+    <div class="terminal">
+      <div class="terminal-heart">♡</div>
+      <h2>AKHILESH.EXE</h2>
+
+      <p id="loadingMessage">
+        Initializing Akhilesh's Birthday...
+      </p>
+
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <h3 id="progressText">0%</h3>
+      <small>SYSTEM STATUS: PREPARING MAGIC...</small>
+    </div>
+  </section>
+
+
+  <!-- SCREEN 2: WELCOME -->
+  <section id="welcome" class="screen hidden">
+
+    <div class="stars">✦ ✧ ⋆ ˚｡⋆୨୧˚ ✧</div>
+
+    <p class="small-heading">A LITTLE SURPRISE FOR YOU</p>
+
+    <h1>Happy Birthday</h1>
+    <h1 class="name">Akhilesh! ♡</h1>
+
+    <p class="description">
+      Someone created a little birthday universe
+      just for you. Are you ready?
+    </p>
+
+    <button onclick="showCake()">
+      Let's Begin 💗
+    </button>
+
+  </section>
+
+
+  <!-- SCREEN 3: CAKE -->
+  <section id="cakeScreen" class="screen hidden">
+
+    <p class="small-heading">MAKE A WISH</p>
+
+    <h1>It's Cake Time! 🎂</h1>
+
+    <p>Close your eyes and make a beautiful wish.</p>
+
+    <div class="cake-scene">
+
+      <div class="candles">
+
+        <div class="candle">
+          <span class="flame"></span>
+          <span class="smoke"></span>
+        </div>
+
+        <div class="candle">
+          <span class="flame"></span>
+          <span class="smoke"></span>
+        </div>
+
+        <div class="candle">
+          <span class="flame"></span>
+          <span class="smoke"></span>
+        </div>
+
+        <div class="candle">
+          <span class="flame"></span>
+          <span class="smoke"></span>
+        </div>
+
+        <div class="candle">
+          <span class="flame"></span>
+          <span class="smoke"></span>
+        </div>
+
+      </div>
+
+      <div class="cake-top"></div>
+      <div class="cake-middle"></div>
+      <div class="cake-bottom"></div>
+      <div class="plate"></div>
+
+    </div>
+
+    <h2 id="cakeMessage">Your wish is waiting! ✨</h2>
+
+    <button id="blowButton" onclick="startBlowCountdown()">
+      I'm Ready! 💨
+    </button>
+
+    <div id="blowCountdown" class="countdown hidden">
+      <h1 id="countNumber">3</h1>
+    </div>
+
+  </section>
+
+
+  <!-- SCREEN 4: CELEBRATION -->
+  <section id="celebration" class="screen hidden">
+
+    <div id="party"></div>
+
+    <div class="celebration-content">
+
+      <div class="party-stars">✨ 🎊 ✨</div>
+
+      <h1>HAPPY BIRTHDAY!!!</h1>
+
+      <h2 class="name">AKHILESH 💗</h2>
+
+      <p>
+        May your life always be filled
+        with happiness and beautiful moments!
+      </p>
+
+      <button onclick="unlockGift()">
+        Continue 🎁
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- SCREEN 5: UNLOCK -->
+  <section id="unlock" class="screen hidden">
+
+    <div class="gift-icon">🎁</div>
+
+    <h1>One More Surprise!</h1>
+
+    <p>Do you want to unlock your special gift?</p>
+
+    <p class="hint">Hehe... you know the answer! 🤭</p>
+
+    <button onclick="showBouquet()">
+      YES! UNLOCK IT 🔓💗
+    </button>
+
+  </section>
+
+
+  <!-- SCREEN 6: BOUQUET -->
+  <section id="bouquet" class="screen hidden">
+
+    <p class="small-heading">A LITTLE GIFT FOR YOU</p>
+
+    <h1>A Bouquet Just For You! 🌷</h1>
+
+    <p>Because you deserve all the beautiful things.</p>
+
+    <div class="bouquet-scene">
+
+      <div class="flower flower1">🌷</div>
+      <div class="flower flower2">🌹</div>
+      <div class="flower flower3">🌸</div>
+      <div class="flower flower4">🌷</div>
+      <div class="flower flower5">🌼</div>
+
+      <div class="bouquet-stems">🌿</div>
+
+      <div class="bouquet-wrap">🎀</div>
+
+    </div>
+
+    <h2>Sending you lots of happiness! ♡</h2>
+
+    <button onclick="showVideo()">
+      Next Surprise 💌
+    </button>
+
+  </section>
+
+
+  <!-- SCREEN 7: VIDEO -->
+  <section id="videoScreen" class="screen hidden">
+
+    <p class="small-heading">A PERSONAL MESSAGE</p>
+
+    <h1>One Last Thing... 💗</h1>
+
+    <p class="description">
+      This time, the birthday wish comes directly from me.
+      I have something to tell you!
+    </p>
+
+    <div id="videoPlaceholder" class="video-placeholder">
+      <div>💌</div>
+      <p>Someone has a message for you...</p>
+
+      <button onclick="playBirthdayVideo()">
+        Tap to Listen ♡
+      </button>
+    </div>
+
+    <div id="videoContainer" class="video-container hidden">
+
+      <video
+        id="birthdayVideo"
+        controls
+        playsinline
+        preload="metadata">
+
+        <source
+          src="assets/birthday-wish.mp4"
+          type="video/mp4">
+
+        Your browser does not support video playback.
+
+      </video>
+
+    </div>
+
+    <h2 class="final-message">
+      Happy Birthday Once Again, Akhilesh! ♡
+    </h2>
+
+  </section>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
